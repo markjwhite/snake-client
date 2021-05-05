@@ -1,3 +1,4 @@
+const { MSG, MOVE_DOWN_KEY, MOVE_UP_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY } = require('./constants');
 // setup interface to handle user input from stdin
 let connection;
 const setupInput = function(conn) {
@@ -18,19 +19,19 @@ const handleUserInput = (data) => {
   }
   //movements
   if (data === 'w') {
-    connection.write('Move: up');
+    connection.write(MOVE_UP_KEY);
   }
   if (data === 'a') {
-    connection.write('Move: left');
+    connection.write(MOVE_LEFT_KEY);
   }
   if (data === 's') {
-    connection.write('Move: down');
+    connection.write(MOVE_DOWN_KEY);
   }
   if (data === 'd') {
-    connection.write('Move: right');
+    connection.write(MOVE_RIGHT_KEY);
   }
   if (data === ' ') {
-    connection.write('Say: get rekt!')
+    connection.write(MSG);
   }
 };
 
