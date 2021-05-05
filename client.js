@@ -11,21 +11,15 @@ const connect = () => {
   //connect handler
   conn.on('connect', () => {
     console.log('Successfully connected to game server');
-    conn.write('Name: Mrk')
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 50)
-    // setInterval(() => {
-    //   conn.write('Move: up');
-    // }, 100)
-  })
+    conn.write('Name: Mrk');
+  });
 
   //data handler
   conn.on('data', (data) => {
     console.log('Server says: ', data);
-  })
+  });
 
-  return conn
+  return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
